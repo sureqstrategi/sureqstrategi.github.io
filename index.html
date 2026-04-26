@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PT. SUREQ Strategi Indonesia | Strategic Architecture Advisory</title>
+<meta name="description" content="SUREQ adalah Strategic Architecture Advisory untuk bisnis, korporasi, lembaga, dan aktor publik Indonesia yang perlu memastikan keputusan besar tidak dijalankan dari asumsi yang salah.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0D1B2A;
+    --navy-mid: #152438;
+    --navy-light: #1C3150;
+    --gold: #B8965A;
+    --gold-light: #D4AC72;
+    --gold-muted: #C9A96E;
+    --white: #FFFFFF;
+    --off-white: #F7F5F2;
+    --light-grey: #F2F0ED;
+    --mid-grey: #E5E2DC;
+    --charcoal: #2C2C2C;
+    --charcoal-light: #4A4A4A;
+    --text-muted: #6B6B6B;
+    --border: #DDD9D2;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--charcoal);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ======================== TYPOGRAPHY ======================== */
+  .serif { font-family: 'Cormorant Garamond', serif; }
+
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.15; }
+
+  /* ======================== LAYOUT ======================== */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+  .container-narrow { max-width: 860px; margin: 0 auto; padding: 0 40px; }
+
+  /* ======================== NAV ======================== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13, 27, 42, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184, 150, 90, 0.2);
+    padding: 0 40px;
+  }
+
+  .nav-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo span { color: var(--gold-muted); }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.72);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-muted); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold-muted);
+    color: var(--gold-muted) !important;
+    padding: 8px 20px !important;
+    border-radius: 2px;
+    font-size: 0.73rem !important;
+    letter-spacing: 0.1em !important;
+    transition: all 0.2s !important;
+  }
+  .nav-cta:hover {
+    background: var(--gold-muted) !important;
+    color: var(--navy) !important;
+  }
+
+  /* ======================== HERO ======================== */
+  #hero {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding-top: 68px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(184, 150, 90, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184, 150, 90, 0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.6;
+  }
+
+  .hero-accent {
+    position: absolute; right: 0; top: 68px;
+    width: 45%; height: 100%;
+    background: linear-gradient(135deg, rgba(28,49,80,0.6) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 80px 0 100px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 40px; height: 1px;
+    background: var(--gold-muted);
+  }
+
+  .hero-headline {
+    font-size: clamp(3rem, 5.5vw, 5.2rem);
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.08;
+    max-width: 800px;
+    margin-bottom: 24px;
+  }
+
+  .hero-headline em {
+    font-style: italic;
+    color: var(--gold-muted);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.62);
+    max-width: 560px;
+    margin-bottom: 56px;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  .hero-actions { display: flex; align-items: center; gap: 24px; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--gold-muted);
+    color: var(--navy);
+    padding: 15px 32px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.25s;
+    border: 1px solid var(--gold-muted);
+  }
+  .btn-primary:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(184,150,90,0.25);
+  }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent;
+    color: rgba(255,255,255,0.72);
+    padding: 15px 0;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { color: var(--gold-muted); border-color: var(--gold-muted); }
+
+  .hero-bottom {
+    position: relative; z-index: 2;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 28px 0;
+    display: flex; gap: 56px;
+  }
+
+  .hero-stat { }
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--gold-muted);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .hero-stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+  }
+
+  /* ======================== SECTION STRUCTURE ======================== */
+  section { padding: 100px 0; }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .section-eyebrow::before {
+    content: ''; display: block;
+    width: 28px; height: 1px; background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    color: var(--navy);
+    margin-bottom: 20px;
+    line-height: 1.15;
+  }
+
+  .section-lead {
+    font-size: 1rem;
+    color: var(--charcoal-light);
+    max-width: 680px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .section-divider {
+    width: 48px; height: 2px;
+    background: var(--gold-muted);
+    margin: 24px 0;
+  }
+
+  /* ======================== VALUE AT RISK ======================== */
+  #value-at-risk { background: var(--light-grey); }
+
+  .var-intro {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: start; margin-bottom: 72px;
+  }
+
+  .var-quote {
+    background: var(--navy);
+    padding: 48px;
+    border-left: 3px solid var(--gold-muted);
+    position: relative;
+  }
+
+  .var-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .var-quote span {
+    display: block; margin-top: 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    color: var(--gold-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .var-text p { font-size: 0.95rem; color: var(--charcoal-light); line-height: 1.85; margin-bottom: 20px; font-weight: 300; }
+
+  .var-highlight {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold-muted);
+    padding: 32px;
+    margin-top: 32px;
+  }
+  .var-highlight p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 !important;
+  }
+
+  .var-table-wrap { margin-top: 64px; }
+  .var-table-title {
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 32px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .risk-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 2px; }
+  .risk-cards + .risk-cards { }
+
+  .risk-card {
+    background: var(--white);
+    padding: 28px 24px;
+    border-top: 2px solid transparent;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .risk-card:hover { border-top-color: var(--gold-muted); transform: translateY(-2px); }
+
+  .risk-card-icon {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .risk-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .risk-card p { font-size: 0.85rem; color: var(--charcoal-light); line-height: 1.7; font-weight: 300; }
+
+  .sim-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    font-size: 0.88rem;
+    margin-top: 48px;
+  }
+
+  .sim-table thead tr {
+    background: var(--navy);
+  }
+  .sim-table thead th {
+    text-align: left;
+    padding: 16px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    border: none;
+  }
+  .sim-table thead th:last-child { color: var(--gold-muted); }
+
+  .sim-table tbody tr { border-bottom: 1px solid var(--border); }
+  .sim-table tbody tr:last-child { border-bottom: none; }
+  .sim-table tbody td { padding: 18px 20px; vertical-align: top; color: var(--charcoal); line-height: 1.6; }
+  .sim-table tbody td:first-child { font-weight: 500; color: var(--navy); }
+  .sim-table tbody td:nth-child(3) { color: var(--charcoal-light); font-size: 0.83rem; }
+  .sim-table tbody td:last-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .sim-table tbody tr:hover { background: var(--off-white); }
+
+  /* ======================== ABOUT ======================== */
+  #about { background: var(--white); }
+
+  .about-grid { display: grid; grid-template-columns: 5fr 4fr; gap: 80px; align-items: start; }
+
+  .about-principles { margin-top: 48px; }
+  .principle-item {
+    display: flex; gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .principle-item:last-child { border-bottom: none; }
+
+  .principle-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--gold-muted);
+    font-weight: 600;
+    flex-shrink: 0;
+    width: 32px;
+    line-height: 1.3;
+  }
+
+  .principle-content h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .principle-content p { font-size: 0.85rem; color: var(--text-muted); font-weight: 300; line-height: 1.7; }
+
+  .about-sidebar {
+    position: sticky; top: 100px;
+  }
+
+  .snapshot-table { width: 100%; }
+  .snapshot-table tr { border-bottom: 1px solid var(--border); }
+  .snapshot-table tr:first-child td { padding-top: 0; }
+  .snapshot-table td {
+    padding: 14px 0;
+    font-size: 0.83rem;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .snapshot-table td:first-child {
+    font-weight: 500;
+    color: var(--navy);
+    width: 45%;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding-right: 20px;
+  }
+  .snapshot-table td:last-child { color: var(--charcoal-light); }
+
+  .about-badge {
+    background: var(--navy);
+    color: var(--white);
+    padding: 32px;
+    margin-top: 32px;
+  }
+  .about-badge p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.55;
+  }
+  .about-badge strong {
+    display: block; margin-top: 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  /* ======================== KAPAN SUREQ ======================== */
+  #kapan { background: var(--light-grey); }
+
+  .kapan-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+    margin-top: 56px;
+    background: var(--mid-grey);
+  }
+
+  .kapan-item {
+    background: var(--white);
+    padding: 32px;
+    display: flex; gap: 20px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+  .kapan-item:hover { background: var(--off-white); }
+
+  .kapan-icon {
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold-muted);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .kapan-icon svg { width: 16px; height: 16px; stroke: var(--gold-muted); fill: none; }
+
+  .kapan-text p { font-size: 0.88rem; color: var(--charcoal-light); line-height: 1.75; font-weight: 300; }
+
+  .kapan-boundary {
+    margin-top: 40px;
+    background: var(--navy);
+    padding: 36px 40px;
+    display: flex; gap: 24px; align-items: flex-start;
+  }
+  .kapan-boundary-icon {
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold-muted); font-weight: 500; flex-shrink: 0; padding-top: 2px;
+  }
+  .kapan-boundary p { font-size: 0.9rem; color: rgba(255,255,255,0.72); line-height: 1.75; font-weight: 300; }
+  .kapan-boundary strong { color: var(--white); font-weight: 500; }
+
+  /* ======================== TRACKS ======================== */
+  #tracks { background: var(--navy); }
+  #tracks .section-title { color: var(--white); }
+  #tracks .section-lead { color: rgba(255,255,255,0.55); }
+
+  .tracks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; }
+
+  .track-card {
+    background: var(--navy-mid);
+    padding: 48px 36px;
+    border-top: 3px solid transparent;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .track-card:nth-child(1) { border-top-color: var(--gold-muted); }
+  .track-card:nth-child(2) { border-top-color: rgba(184,150,90,0.5); }
+  .track-card:nth-child(3) { border-top-color: rgba(184,150,90,0.25); }
+  .track-card:hover { background: var(--navy-light); transform: translateY(-3px); }
+
+  .track-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: rgba(184,150,90,0.12);
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+
+  .track-card h3 {
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+
+  .track-for {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  .track-card p { font-size: 0.87rem; color: rgba(255,255,255,0.52); line-height: 1.75; font-weight: 300; margin-bottom: 24px; }
+
+  .track-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .track-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.45);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 4px 10px;
+    border-radius: 1px;
+  }
+
+  /* ======================== SITUASI ======================== */
+  #situasi { background: var(--white); }
+
+  .situasi-tabs { display: flex; gap: 0; margin: 48px 0 0; border-bottom: 2px solid var(--border); }
+  .situasi-tab {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 14px 24px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+    background: none; border-top: none; border-left: none; border-right: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .situasi-tab:hover { color: var(--navy); }
+  .situasi-tab.active { color: var(--navy); border-bottom-color: var(--gold-muted); }
+
+  .situasi-panels { margin-top: 40px; }
+  .situasi-panel { display: none; }
+  .situasi-panel.active { display: block; }
+
+  .situasi-table {
+    width: 100%; border-collapse: collapse; font-size: 0.87rem;
+  }
+  .situasi-table thead tr { background: var(--off-white); }
+  .situasi-table thead th {
+    text-align: left; padding: 14px 18px;
+    font-weight: 600; font-size: 0.72rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--navy); border: none;
+  }
+  .situasi-table tbody tr { border-bottom: 1px solid var(--border); }
+  .situasi-table tbody tr:last-child { border-bottom: none; }
+  .situasi-table tbody td { padding: 18px 18px; vertical-align: top; line-height: 1.65; color: var(--charcoal-light); }
+  .situasi-table tbody td:first-child { font-weight: 500; color: var(--charcoal); width: 30%; }
+  .situasi-table tbody td:last-child {
+    font-size: 0.8rem; color: var(--gold);
+    font-weight: 600; font-family: 'Cormorant Garamond', serif;
+    font-size: 0.88rem;
+  }
+
+  /* ======================== ENGAGEMENT ======================== */
+  #engagement { background: var(--light-grey); }
+
+  .engagement-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 2px; margin-top: 56px;
+    background: var(--mid-grey);
+  }
+
+  .engagement-card {
+    background: var(--white); padding: 36px 32px;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  .engagement-card:hover { border-left-color: var(--gold-muted); }
+
+  .engagement-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .engagement-card .tag {
+    font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 14px; font-weight: 500;
+  }
+  .engagement-card p { font-size: 0.85rem; color: var(--charcoal-light); line-height: 1.75; font-weight: 300; }
+  .engagement-card .output-label {
+    font-size: 0.72rem; font-weight: 600; color: var(--navy);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-top: 16px; margin-bottom: 6px;
+  }
+
+  /* ======================== AREA PENDALAMAN ======================== */
+  #area { background: var(--white); }
+
+  .area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+
+  .area-card {
+    border: 1px solid var(--border);
+    padding: 28px 24px;
+    transition: all 0.25s;
+  }
+  .area-card:hover {
+    border-color: var(--gold-muted);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+  .area-card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
+  }
+  .area-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+
+  /* ======================== CARA KERJA ======================== */
+  #cara-kerja { background: var(--navy); }
+  #cara-kerja .section-title { color: var(--white); }
+  #cara-kerja .section-lead { color: rgba(255,255,255,0.55); }
+
+  .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 64px; position: relative; }
+
+  .process-step {
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+  }
+
+  .process-step::after {
+    content: '';
+    position: absolute; top: 28px; left: calc(50% + 28px);
+    width: calc(100% - 56px); height: 1px;
+    background: rgba(184,150,90,0.25);
+  }
+  .process-step:last-child::after { display: none; }
+
+  .step-circle {
+    width: 56px; height: 56px;
+    border: 1px solid var(--gold-muted);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--gold-muted);
+    font-weight: 600;
+    background: var(--navy);
+    position: relative; z-index: 1;
+  }
+
+  .process-step h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+  .process-step p { font-size: 0.78rem; color: rgba(255,255,255,0.42); line-height: 1.65; font-weight: 300; }
+
+  /* ======================== PROOF MODEL ======================== */
+  #proof { background: var(--off-white); }
+
+  .proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 80px; align-items: center; margin-top: 56px; }
+
+  .proof-list { list-style: none; }
+  .proof-item {
+    display: flex; gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .proof-item:last-child { border-bottom: none; }
+  .proof-check {
+    width: 20px; height: 20px;
+    border: 1px solid var(--gold-muted);
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 2px;
+  }
+  .proof-check::after {
+    content: '';
+    width: 8px; height: 5px;
+    border-left: 1.5px solid var(--gold-muted);
+    border-bottom: 1.5px solid var(--gold-muted);
+    transform: rotate(-45deg) translateY(-1px);
+  }
+  .proof-item-text h5 {
+    font-size: 0.9rem; font-weight: 600;
+    color: var(--navy); margin-bottom: 4px;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .proof-item-text p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+
+  .proof-right {
+    background: var(--navy);
+    padding: 48px;
+  }
+  .proof-right h3 {
+    font-size: 1.6rem;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+  .proof-right p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .proof-right p:last-child { margin-bottom: 0; }
+
+  /* ======================== INVESTASI ======================== */
+  #investasi { background: var(--white); }
+
+  .inv-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+
+  .inv-card {
+    border: 1px solid var(--border);
+    padding: 32px 28px;
+    position: relative;
+    transition: all 0.25s;
+  }
+  .inv-card:hover { border-color: var(--gold-muted); box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+  .inv-card.featured {
+    border-color: var(--gold-muted);
+    background: var(--navy);
+  }
+  .inv-card.featured h4 { color: var(--white); }
+  .inv-card.featured p { color: rgba(255,255,255,0.55); }
+  .inv-card.featured .inv-range { color: var(--gold-muted); }
+  .inv-card.featured .inv-label { color: rgba(255,255,255,0.4); }
+
+  .inv-badge {
+    position: absolute; top: -1px; right: 24px;
+    background: var(--gold-muted);
+    color: var(--navy);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+  }
+
+  .inv-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+  .inv-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; margin-bottom: 20px; }
+
+  .inv-range {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .inv-label {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .inv-note {
+    margin-top: 40px;
+    background: var(--light-grey);
+    padding: 28px 32px;
+    border-left: 3px solid var(--gold-muted);
+  }
+  .inv-note p { font-size: 0.88rem; color: var(--charcoal-light); line-height: 1.8; font-weight: 300; }
+  .inv-note strong { color: var(--navy); font-weight: 600; }
+
+  /* ======================== BOUNDARY ======================== */
+  #boundary { background: var(--light-grey); }
+
+  .boundary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 56px; background: var(--mid-grey); }
+
+  .boundary-col { background: var(--white); padding: 40px 36px; }
+  .boundary-col h4 {
+    font-size: 0.72rem; font-weight: 600;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    margin-bottom: 24px; padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+  }
+  .boundary-col.sureq h4 { color: var(--navy); border-bottom-color: var(--gold-muted); }
+  .boundary-col.client h4 { color: var(--charcoal-light); }
+
+  .boundary-item {
+    display: flex; gap: 14px;
+    margin-bottom: 16px; align-items: flex-start;
+    font-size: 0.87rem; color: var(--charcoal-light); line-height: 1.65; font-weight: 300;
+  }
+  .boundary-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0; margin-top: 7px;
+  }
+  .sureq .boundary-dot { background: var(--gold-muted); }
+  .client .boundary-dot { background: var(--border); }
+
+  /* ======================== FAQ ======================== */
+  #faq { background: var(--white); }
+
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 56px; }
+  .faq-col { }
+
+  .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 16px;
+  }
+  .faq-q::after {
+    content: '+';
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--gold-muted);
+    flex-shrink: 0;
+    line-height: 1.3;
+    transition: transform 0.2s;
+  }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-weight: 300;
+    display: none;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ======================== CONTACT CTA ======================== */
+  #contact { background: var(--navy); padding: 120px 0; }
+
+  .contact-inner { text-align: center; max-width: 680px; margin: 0 auto; }
+
+  .contact-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  .contact-inner h2 {
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    color: var(--white);
+    margin-bottom: 20px;
+    line-height: 1.12;
+  }
+
+  .contact-inner p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 48px;
+  }
+
+  .contact-actions { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; }
+
+  .btn-contact-primary {
+    background: var(--gold-muted);
+    color: var(--navy);
+    padding: 16px 36px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .btn-contact-primary:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(184,150,90,0.25); }
+
+  .btn-contact-ghost {
+    color: rgba(255,255,255,0.65);
+    padding: 16px 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s;
+  }
+  .btn-contact-ghost:hover { color: var(--gold-muted); border-bottom-color: var(--gold-muted); }
+
+  .contact-details {
+    margin-top: 72px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .contact-detail {
+    padding: 28px 24px;
+    background: rgba(255,255,255,0.04);
+    text-align: left;
+  }
+  .contact-detail-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-muted);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .contact-detail-value {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ======================== NEXT STEP ======================== */
+  .next-steps { margin-top: 56px; text-align: left; }
+  .next-steps h3 {
+    font-size: 1.3rem; color: var(--white);
+    margin-bottom: 24px;
+  }
+  .next-step-list { list-style: none; }
+  .next-step-item {
+    display: flex; gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    align-items: flex-start;
+  }
+  .next-step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--gold-muted);
+    font-weight: 600; flex-shrink: 0; width: 24px;
+  }
+  .next-step-item p { font-size: 0.87rem; color: rgba(255,255,255,0.6); line-height: 1.7; font-weight: 300; }
+
+  /* ======================== FOOTER ======================== */
+  footer {
+    background: #07101A;
+    padding: 48px 0;
+    border-top: 1px solid rgba(184,150,90,0.15);
+  }
+  .footer-inner {
+    max-width: 1180px; margin: 0 auto; padding: 0 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .footer-left p { font-size: 0.78rem; color: rgba(255,255,255,0.3); font-weight: 300; }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-weight: 600;
+    color: rgba(255,255,255,0.5); margin-bottom: 4px;
+  }
+  .footer-right {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.2); text-align: right;
+  }
+
+  /* ======================== SCROLL ANIMATION ======================== */
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ======================== RESPONSIVE ======================== */
+  @media (max-width: 900px) {
+    .container { padding: 0 24px; }
+    .container-narrow { padding: 0 24px; }
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    section { padding: 72px 0; }
+    .var-intro { grid-template-columns: 1fr; gap: 40px; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .about-sidebar { position: static; }
+    .kapan-grid { grid-template-columns: 1fr; }
+    .tracks-grid { grid-template-columns: 1fr; }
+    .risk-cards { grid-template-columns: 1fr 1fr; }
+    .situasi-tabs { flex-wrap: wrap; }
+    .engagement-grid { grid-template-columns: 1fr; }
+    .area-grid { grid-template-columns: 1fr 1fr; }
+    .inv-cards { grid-template-columns: 1fr; }
+    .boundary-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; gap: 0; }
+    .contact-details { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; gap: 32px; }
+    .process-step::after { display: none; }
+    .proof-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-bottom { flex-wrap: wrap; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Sureq <span>Strategi</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#tracks">Track</a></li>
+      <li><a href="#engagement">Engagement</a></li>
+      <li><a href="#investasi">Investasi</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="nav-cta">Mulai Diskusi</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-accent"></div>
+  <div class="container">
+    <div class="hero-content reveal">
+      <div class="hero-eyebrow">Strategic Architecture Advisory · Jakarta, Indonesia</div>
+      <h1 class="hero-headline">
+        Masalah terbesar bukan kurang bergerak.<br>
+        <em>Masalahnya: bergerak tanpa<br>arsitektur keputusan yang jelas.</em>
+      </h1>
+      <p class="hero-sub">
+        SUREQ membantu bisnis, korporasi, lembaga, program, dan aktor publik membaca akar masalah, menyusun arsitektur keputusan, dan memastikan eksekusi bergerak dari arah yang benar—sebelum budget, reputasi, atau agenda strategis dipertaruhkan.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Mulai Orientasi Singkat</a>
+        <a href="#tracks" class="btn-ghost">Lihat Track Layanan →</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="hero-bottom reveal">
+      <div class="hero-stat">
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">Track Utama Layanan</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">10+</div>
+        <div class="hero-stat-label">Area Pendalaman Strategis</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">Independen</div>
+        <div class="hero-stat-label">Tanpa Komisi Vendor</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE AT RISK -->
+<section id="value-at-risk">
+  <div class="container">
+    <div class="section-eyebrow reveal">Value at Risk</div>
+    <h2 class="section-title reveal">Berapa Nilai yang Sedang<br>Anda Pertaruhkan?</h2>
+    <div class="section-divider reveal"></div>
+
+    <div class="var-intro">
+      <div class="var-text reveal">
+        <p>Banyak keputusan strategis tidak langsung terlihat mahal di awal. Yang terlihat hanya kebutuhan untuk menjalankan kampanye, mengganti vendor, merekrut direktur, meluncurkan program, atau membangun reputasi.</p>
+        <p>Tetapi ketika arah belum jelas, biaya sebenarnya muncul dalam tiga bentuk: uang yang keluar tanpa hasil, waktu yang habis tanpa pembelajaran, dan peluang yang lewat karena organisasi terlambat mengambil keputusan yang tepat.</p>
+        <p>SUREQ dilibatkan sebelum biaya besar terkunci—untuk membantu klien membaca akar masalah, menyusun arsitektur keputusan, dan memastikan eksekusi bergerak dari arah yang benar.</p>
+        <div class="var-highlight">
+          <p>Yang sering hilang bukan hanya uang. Yang juga hilang adalah 3 bulan kampanye tanpa <em>learning</em>, 6 bulan <em>onboarding</em> orang yang salah, 1 tahun program tanpa bukti dampak, atau momentum isu yang sudah diambil pihak lain.</p>
+        </div>
+      </div>
+      <div class="var-quote reveal">
+        <p>"Sebelum budget, tim, vendor, program, atau reputasi diperbesar—pertanyaan yang lebih tepat adalah: berapa nilai yang bisa hilang jika keputusan ini dijalankan tanpa arsitektur yang benar?"</p>
+        <span>— Prinsip Keterlibatan SUREQ</span>
+      </div>
+    </div>
+
+    <div class="var-table-wrap reveal">
+      <h3 class="var-table-title">Konteks Risiko Keputusan</h3>
+      <div class="risk-cards">
+        <div class="risk-card">
+          <div class="risk-card-icon">Kampanye</div>
+          <h4>Kampanye Brand, Produk, atau Tokoh</h4>
+          <p>Campaign ramai tetapi tidak menggerakkan action, trust, inquiry, atau konversi karena value, message, dan action path belum jelas sebelum kampanye diperbesar.</p>
+        </div>
+        <div class="risk-card">
+          <div class="risk-card-icon">Vendor & Tim</div>
+          <h4>Mengganti Vendor, Agency, atau Tim</h4>
+          <p>Vendor baru tetap gagal karena brief, KPI, scope, dan arah strategis masih kabur. Biaya onboarding ulang berulang tanpa perbaikan struktural.</p>
+        </div>
+        <div class="risk-card">
+          <div class="risk-card-icon">Rekrutmen</div>
+          <h4>Merekrut Direktur atau Tim Senior</h4>
+          <p>Orang senior masuk ke organisasi yang role, authority, KPI, dan governance-nya belum siap. 3–6 bulan adaptasi terbuang tanpa hasil yang jelas.</p>
+        </div>
+        <div class="risk-card">
+          <div class="risk-card-icon">Program Sosial</div>
+          <h4>Program Dampak Sosial atau CSI</h4>
+          <p>Program terlihat aktif tetapi sulit membuktikan dampak, tidak berkelanjutan, dan tidak memperkuat stakeholder trust.</p>
+        </div>
+        <div class="risk-card">
+          <div class="risk-card-icon">Reputasi</div>
+          <h4>Membangun Citra Tokoh atau Lembaga</h4>
+          <p>Citra menjadi kosmetik, tidak terhubung dengan mandat, rekam jejak, data survei, dan bukti kinerja yang konkret.</p>
+        </div>
+        <div class="risk-card">
+          <div class="risk-card-icon">Data Survei</div>
+          <h4>Menggunakan Data Survei</h4>
+          <p>Data hanya menjadi laporan angka, tidak berubah menjadi segmentasi, isu, pesan, dan strategi gerak yang dapat dieksekusi.</p>
+        </div>
+      </div>
+
+      <table class="sim-table reveal">
+        <thead>
+          <tr>
+            <th>Konteks Klien</th>
+            <th>Budget / Nilai yang Dipertaruhkan</th>
+            <th>Waktu & Peluang yang Bisa Hilang</th>
+            <th>Investasi SUREQ yang Rasional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kampanye produk atau brand</td>
+            <td>Rp1 miliar</td>
+            <td>1–3 bulan campaign cycle; momentum launching, seasonal demand, atau attention window.</td>
+            <td>Rp60–150 juta</td>
+          </tr>
+          <tr>
+            <td>Program corporate social impact</td>
+            <td>Rp2 miliar</td>
+            <td>3–12 bulan implementasi; trust komunitas, sponsor, dan proof of impact.</td>
+            <td>Rp100–250 juta</td>
+          </tr>
+          <tr>
+            <td>Hiring direktur atau senior leader</td>
+            <td>Rp800 juta–Rp1,5 miliar/tahun</td>
+            <td>3–6 bulan onboarding dan koreksi; momentum scaling atau perbaikan organisasi.</td>
+            <td>Rp45–150 juta</td>
+          </tr>
+          <tr>
+            <td>Kampanye tokoh atau agenda publik</td>
+            <td>Rp1–5 miliar</td>
+            <td>3–12 bulan political/public momentum; persepsi, basis dukungan, dan agenda control.</td>
+            <td>Rp100–500 juta</td>
+          </tr>
+          <tr>
+            <td>Ekspansi market atau channel</td>
+            <td>Rp2–10 miliar</td>
+            <td>6–12 bulan market entry; first-mover advantage dan trust pasar.</td>
+            <td>Rp150–500 juta</td>
+          </tr>
+          <tr>
+            <td>Vendor, agency, atau tim produksi</td>
+            <td>Rp300 juta–Rp2 miliar/tahun</td>
+            <td>1–3 bulan revisi dan onboarding ulang; konsistensi pesan dan kualitas eksekusi.</td>
+            <td>Rp15–100 juta</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-eyebrow reveal">Tentang SUREQ</div>
+        <h2 class="section-title reveal">Firma Advisory yang Memastikan<br>Keputusan Besar Tidak Dijalankan dari Asumsi yang Salah</h2>
+        <div class="section-divider reveal"></div>
+        <p class="section-lead reveal">PT. SUREQ Strategi Indonesia adalah firma Strategic Architecture Advisory independen yang membantu bisnis, korporasi, lembaga, venture, tokoh publik, pejabat, program, dan agenda strategis menyusun arsitektur keputusan sebelum masuk ke eksekusi yang lebih besar.</p>
+        <p class="section-lead reveal" style="margin-top:16px;">SUREQ bekerja pada wilayah diagnosis strategis, architecture design, campaign direction, stakeholder reading, program architecture, reputation pathway, governance, measurement, guidance, dan execution handoff. Rekomendasi berbasis kepentingan strategi klien, bukan komisi vendor atau pelaksana.</p>
+
+        <div class="about-principles reveal">
+          <div class="principle-item">
+            <div class="principle-num">01</div>
+            <div class="principle-content">
+              <h4>Kedalaman Sebelum Kecepatan</h4>
+              <p>SUREQ tidak memperbesar eksekusi sebelum arah, scope, dan risiko terbaca dengan jelas.</p>
+            </div>
+          </div>
+          <div class="principle-item">
+            <div class="principle-num">02</div>
+            <div class="principle-content">
+              <h4>Diagnosis Sebelum Rekomendasi</h4>
+              <p>Gejala klien dibaca ulang agar solusi tidak salah alamat dan anggaran tidak terbuang sia-sia.</p>
+            </div>
+          </div>
+          <div class="principle-item">
+            <div class="principle-num">03</div>
+            <div class="principle-content">
+              <h4>Arsitektur Sebelum Eksekusi</h4>
+              <p>Produksi, vendor, tim, dan media bekerja lebih baik jika strategi dan brief-nya sudah jelas.</p>
+            </div>
+          </div>
+          <div class="principle-item">
+            <div class="principle-num">04</div>
+            <div class="principle-content">
+              <h4>Klien Belajar, Bukan Bergantung</h4>
+              <p>Engagement dirancang agar klien lebih mampu mengambil keputusan setelah proses selesai.</p>
+            </div>
+          </div>
+          <div class="principle-item">
+            <div class="principle-num">05</div>
+            <div class="principle-content">
+              <h4>Scope Discipline</h4>
+              <p>Output, timeline, payment trigger, dan batas peran disepakati sebelum kickoff dimulai.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-sidebar reveal">
+        <table class="snapshot-table">
+          <tr>
+            <td>Legal Entity</td>
+            <td>PT. SUREQ Strategi Indonesia</td>
+          </tr>
+          <tr>
+            <td>Core Positioning</td>
+            <td>Strategic Architecture Advisory</td>
+          </tr>
+          <tr>
+            <td>Peran Utama</td>
+            <td>Membaca masalah, menyusun arsitektur keputusan, merancang strategi, menyiapkan sequence dan handoff</td>
+          </tr>
+          <tr>
+            <td>Klien Utama</td>
+            <td>Bisnis, korporasi, lembaga, venture, program, tokoh publik, pejabat, dan agenda strategis</td>
+          </tr>
+          <tr>
+            <td>Model Kerja</td>
+            <td>Diagnostic, architecture design, strategic deepening, guidance, handoff, dan next-wave review</td>
+          </tr>
+          <tr>
+            <td>Independensi</td>
+            <td>Rekomendasi berbasis kepentingan strategi klien, bukan komisi vendor atau pelaksana</td>
+          </tr>
+          <tr>
+            <td>Alamat</td>
+            <td>The East, Jl. Lingkar Mega Kuningan Barat Raya No. 1, Setiabudi, Jakarta Selatan</td>
+          </tr>
+        </table>
+        <div class="about-badge">
+          <p>"SUREQ membantu klien tidak hanya bergerak lebih cepat, tetapi bergerak dari keputusan yang lebih benar."</p>
+          <strong>Closing Principle — SUREQ 2026</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KAPAN SUREQ -->
+<section id="kapan">
+  <div class="container">
+    <div class="section-eyebrow reveal">Relevansi Keterlibatan</div>
+    <h2 class="section-title reveal">Kapan SUREQ Perlu Dilibatkan?</h2>
+    <div class="section-divider reveal"></div>
+    <p class="section-lead reveal">SUREQ relevan ketika keputusan yang akan diambil terlalu penting untuk hanya didasarkan pada intuisi, tekanan aktivitas, atau solusi yang belum diuji.</p>
+
+    <div class="kapan-grid reveal">
+      <div class="kapan-item">
+        <div class="kapan-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        </div>
+        <div class="kapan-text">
+          <p>Masalah terlihat jelas, tetapi akar penyebabnya belum pasti dan organisasi perlu membacanya dari perspektif yang lebih menyeluruh.</p>
+        </div>
+      </div>
+      <div class="kapan-item">
+        <div class="kapan-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 3v18M3 9h18"/></svg>
+        </div>
+        <div class="kapan-text">
+          <p>Organisasi ingin menjalankan kampanye, program, ekspansi, atau perubahan struktur tetapi belum memiliki arsitektur yang utuh.</p>
+        </div>
+      </div>
+      <div class="kapan-item">
+        <div class="kapan-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="kapan-text">
+          <p>Perusahaan merasa perlu direktur, vendor, atau tim baru tetapi belum yakin apakah kebutuhan sebenarnya ada pada orang, sistem, atau arah.</p>
+        </div>
+      </div>
+      <div class="kapan-item">
+        <div class="kapan-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="kapan-text">
+          <p>Brand, produk, tokoh, lembaga, atau program membutuhkan positioning, narasi, proof, dan sequence yang lebih kuat dan terstruktur.</p>
+        </div>
+      </div>
+      <div class="kapan-item">
+        <div class="kapan-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="kapan-text">
+          <p>Data survei, data pasar, laporan internal, atau insight lapangan sudah tersedia tetapi belum diterjemahkan menjadi strategi yang dapat dijalankan.</p>
+        </div>
+      </div>
+      <div class="kapan-item">
+        <div class="kapan-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="kapan-text">
+          <p>Isu, reputasi, atau persepsi publik perlu dikendalikan dengan respons yang tidak reaktif dan memiliki arsitektur narasi yang jelas.</p>
+        </div>
+      </div>
+      <div class="kapan-item">
+        <div class="kapan-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 0 0 4.93 19.07"/><path d="M4.93 4.93a10 10 0 0 0 14.14 14.14"/></svg>
+        </div>
+        <div class="kapan-text">
+          <p>Owner, founder, direksi, atau pimpinan terlalu banyak turun ke detail karena governance, role, KPI, atau reporting system belum sehat.</p>
+        </div>
+      </div>
+      <div class="kapan-item">
+        <div class="kapan-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="kapan-text">
+          <p>Organisasi membutuhkan partner berpikir untuk menguji keputusan besar sebelum komitmen biaya, struktur, atau implementasi diperbesar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="kapan-boundary reveal">
+      <div class="kapan-boundary-icon">Note</div>
+      <p><strong>Kapan SUREQ bukan pilihan yang tepat?</strong> SUREQ bukan pilihan utama jika klien hanya membutuhkan tenaga produksi harian tanpa kebutuhan strategi, keputusan instan tanpa diagnosis, atau pelaksana operasional yang mengambil alih seluruh pekerjaan teknis. Dalam kondisi tersebut, klien lebih tepat bekerja langsung dengan tim internal, vendor teknis, agency, atau pelaksana operasional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKS -->
+<section id="tracks">
+  <div class="container">
+    <div class="section-eyebrow reveal">Tiga Track Utama</div>
+    <h2 class="section-title reveal" style="color:var(--white);">Layanan Disusun Berdasarkan<br>Konteks, Bukan Paket Generik</h2>
+    <div class="section-divider reveal"></div>
+    <p class="section-lead reveal">SUREQ tidak langsung menawarkan paket kaku. Kami membaca situasi terlebih dahulu untuk menentukan area pendalaman dan bentuk engagement yang paling relevan untuk setiap klien.</p>
+
+    <div class="tracks-grid reveal">
+      <div class="track-card">
+        <div class="track-num">01</div>
+        <div class="track-for">Bisnis & Korporasi</div>
+        <h3>Business, Corporate & Brand Strategy</h3>
+        <p>Untuk bisnis berjalan, perusahaan, korporasi, brand, produk, jasa, unit bisnis, dan organisasi komersial yang membutuhkan arah pertumbuhan yang lebih terstruktur.</p>
+        <div class="track-tags">
+          <span class="track-tag">Growth Architecture</span>
+          <span class="track-tag">Campaign Strategy</span>
+          <span class="track-tag">Market Expansion</span>
+          <span class="track-tag">Governance</span>
+          <span class="track-tag">Brand Positioning</span>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-num">02</div>
+        <div class="track-for">Venture & Program</div>
+        <h3>New Venture, Program & Initiative Development</h3>
+        <p>Untuk venture baru, unit baru, program strategis, program pemberdayaan, corporate social impact, sustainability initiative, dan inisiatif lintas sektor.</p>
+        <div class="track-tags">
+          <span class="track-tag">Venture Framing</span>
+          <span class="track-tag">Program Architecture</span>
+          <span class="track-tag">Impact Design</span>
+          <span class="track-tag">M&E</span>
+          <span class="track-tag">Launch Readiness</span>
+        </div>
+      </div>
+      <div class="track-card">
+        <div class="track-num">03</div>
+        <div class="track-for">Tokoh Publik & Agenda</div>
+        <h3>Public Strategy, Reputation & Agenda Architecture</h3>
+        <p>Untuk tokoh publik, pejabat, kandidat, kepala daerah, lembaga, organisasi publik, gerakan, dan agenda strategis yang membutuhkan arsitektur reputasi dan agenda jangka panjang.</p>
+        <div class="track-tags">
+          <span class="track-tag">Reputation Pathway</span>
+          <span class="track-tag">Survey-to-Strategy</span>
+          <span class="track-tag">Issue Control</span>
+          <span class="track-tag">Mandate Realization</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SITUASI KLIEN -->
+<section id="situasi">
+  <div class="container">
+    <div class="section-eyebrow reveal">Situasi Klien & Arah Engagement</div>
+    <h2 class="section-title reveal">Klien Datang dengan Berbagai Situasi.<br>SUREQ Membaca Lebih Dalam.</h2>
+    <div class="section-divider reveal"></div>
+    <p class="section-lead reveal">Klien sering datang dengan kebutuhan yang tampak jelas. SUREQ membaca lebih dulu apakah kebutuhan tersebut benar-benar solusi utama atau masih gejala dari masalah yang lebih dalam.</p>
+
+    <div class="situasi-tabs reveal">
+      <button class="situasi-tab active" onclick="switchTab(this, 'bisnis')">Business & Brand</button>
+      <button class="situasi-tab" onclick="switchTab(this, 'venture')">Venture & Program</button>
+      <button class="situasi-tab" onclick="switchTab(this, 'publik')">Publik & Reputasi</button>
+      <button class="situasi-tab" onclick="switchTab(this, 'lintas')">Lintas Track</button>
+    </div>
+
+    <div class="situasi-panels">
+      <div class="situasi-panel active" id="panel-bisnis">
+        <table class="situasi-table">
+          <thead><tr><th>Situasi Klien</th><th>Pertanyaan Strategis</th><th>Engagement Awal</th></tr></thead>
+          <tbody>
+            <tr><td>Bisnis tumbuh, tetapi tidak sistematis</td><td>Apa akar masalah growth: offer, market, trust, channel, tim, relasi pelanggan, atau measurement?</td><td>Strategic Diagnostic → Core Strategic Architecture</td></tr>
+            <tr><td>Ingin ekspansi atau membuka channel baru</td><td>Apakah market siap, segmen mana yang diprioritaskan, channel apa yang sehat, dan kapabilitas apa yang perlu disiapkan?</td><td>Diagnostic → Market/Expansion Architecture</td></tr>
+            <tr><td>Brand ingin menjalankan kampanye</td><td>Apa value yang harus dibuktikan, siapa target prioritas, pesan apa yang dibawa, dan bagaimana kampanye bergerak dari awareness ke action?</td><td>Campaign Diagnostic → Campaign Architecture</td></tr>
+            <tr><td>Marketing aktif, tetapi dampaknya tidak jelas</td><td>Apakah masalahnya pada value, positioning, trust, message, channel, conversion path, atau ukuran yang salah?</td><td>Diagnostic → Pendalaman Strategis</td></tr>
+            <tr><td>Produk atau layanan sulit dijual konsisten</td><td>Apakah offer sudah tajam, benefit hierarchy jelas, pricing logic sehat, dan sales narrative konsisten?</td><td>Diagnostic → Value & Offer Architecture</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="situasi-panel" id="panel-venture">
+        <table class="situasi-table">
+          <thead><tr><th>Situasi Klien</th><th>Pertanyaan Strategis</th><th>Engagement Awal</th></tr></thead>
+          <tbody>
+            <tr><td>Inisiatif baru dibangun dari nol</td><td>Apa model bisnisnya, siapa target awalnya, apa offer utamanya, bagaimana monetisasi terjadi, dan apa urutan launch yang sehat?</td><td>Core Strategic Architecture</td></tr>
+            <tr><td>Program baru ingin dikembangkan</td><td>Apa tujuan program, siapa penerima manfaat, siapa stakeholder, bagaimana implementasi berjalan, dan apa indikator keberhasilannya?</td><td>Program Diagnostic → Program Architecture</td></tr>
+            <tr><td>Program pemberdayaan atau social impact</td><td>Apakah program masih berupa kegiatan, atau sudah menjadi intervensi strategis dengan beneficiary logic, partner, indikator, dan dampak?</td><td>Program Architecture → Handoff Brief</td></tr>
+            <tr><td>Program sudah berjalan tetapi sulit dievaluasi</td><td>Ukuran berhasilnya apa, indikator mana yang leading/lagging, kapan perlu koreksi, scale, pivot, atau stop?</td><td>Performance Review → Next-Wave Plan</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="situasi-panel" id="panel-publik">
+        <table class="situasi-table">
+          <thead><tr><th>Situasi Klien</th><th>Pertanyaan Strategis</th><th>Engagement Awal</th></tr></thead>
+          <tbody>
+            <tr><td>Tokoh atau pejabat ingin membangun citra jangka panjang</td><td>Citra apa yang ingin dibangun, berbasis mandat apa, untuk horizon apa, kepada siapa, dan lewat proof apa?</td><td>Reputation Diagnostic → Reputation Architecture</td></tr>
+            <tr><td>Sudah memiliki data survei</td><td>Apa makna strategis survei, segmen mana yang bisa digerakkan, isu mana yang menjadi leverage, dan apa sequence geraknya?</td><td>Survey Review → Strategy Translation</td></tr>
+            <tr><td>Kepala daerah ingin merealisasikan janji politik</td><td>Janji mana yang feasible, berdampak, terlihat, dan dapat dikomunikasikan sebagai progress yang kredibel?</td><td>Mandate Diagnostic → Mandate-to-Program Architecture</td></tr>
+            <tr><td>Isu publik atau reputasi perlu dikendalikan</td><td>Apa sumber isu, siapa aktor yang memengaruhi, narasi apa yang perlu dikoreksi, dan bagaimana respons dikendalikan?</td><td>Issue Diagnostic → Response Architecture</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="situasi-panel" id="panel-lintas">
+        <table class="situasi-table">
+          <thead><tr><th>Situasi Klien</th><th>Pertanyaan Strategis</th><th>Engagement Awal</th></tr></thead>
+          <tbody>
+            <tr><td>Banyak agenda, sulit menentukan prioritas</td><td>Agenda mana yang paling menentukan, mana yang bisa ditunda, apa trade-off-nya, dan bagaimana resource dialokasikan?</td><td>Strategic Diagnostic & Scoping</td></tr>
+            <tr><td>Bingung perlu konsultan, direktur, vendor, atau tim baru</td><td>Apakah masalahnya orang, sistem, struktur, governance, kompetensi, arah, atau keputusan yang belum jelas?</td><td>Organization Readiness Diagnostic</td></tr>
+            <tr><td>Owner terlalu banyak turun ke detail</td><td>Apakah penyebabnya trust gap, role ambiguity, KPI tidak jelas, capability gap, atau approval system yang belum sehat?</td><td>Governance Diagnostic → Operating Rhythm</td></tr>
+            <tr><td>Vendor atau tim ada, tetapi hasilnya tidak sesuai harapan</td><td>Apakah masalahnya kualitas pelaksana, brief yang kabur, KPI yang salah, approval berlapis, atau arah strategis belum tertulis?</td><td>Brief & Handoff Review</td></tr>
+            <tr><td>Butuh partner berpikir untuk keputusan penting berkala</td><td>Keputusan apa yang perlu diuji, asumsi apa yang harus dibaca ulang, risiko apa yang perlu dikendalikan?</td><td>Strategic Advisory & Decision Guidance</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT -->
+<section id="engagement">
+  <div class="container">
+    <div class="section-eyebrow reveal">Bentuk Engagement</div>
+    <h2 class="section-title reveal">Bagaimana SUREQ<br>Menyusun Engagement</h2>
+    <div class="section-divider reveal"></div>
+    <p class="section-lead reveal">Setiap klien tidak selalu membutuhkan paket yang sama. SUREQ memulai dari pembacaan masalah, lalu menentukan bentuk engagement yang paling sesuai kebutuhan nyata klien.</p>
+
+    <div class="engagement-grid reveal">
+      <div class="engagement-card">
+        <div class="tag">Entry Point</div>
+        <h4>Strategic Diagnostic & Scoping</h4>
+        <p>Untuk klien yang belum yakin akar masalah dan ingin tahu harus mulai dari mana. Memisahkan gejala dari bottleneck utama sebelum membeli layanan yang terlalu besar atau salah arah.</p>
+        <div class="output-label">Output</div>
+        <p style="color:var(--text-muted);font-size:0.82rem;">Problem framing, bottleneck hypothesis, readiness assessment, rekomendasi track, dan engagement direction.</p>
+      </div>
+      <div class="engagement-card">
+        <div class="tag">Fast Clarity</div>
+        <h4>Focused Architecture Sprint</h4>
+        <p>Untuk klien dengan satu masalah prioritas yang perlu dirapikan cepat. Strategic diagnosis terbatas dengan framework masalah dan arah solusi yang dapat langsung digunakan.</p>
+        <div class="output-label">Output</div>
+        <p style="color:var(--text-muted);font-size:0.82rem;">Architecture map untuk satu area, priority sequence, dan action recommendation.</p>
+      </div>
+      <div class="engagement-card">
+        <div class="tag">Foundation</div>
+        <h4>Core Strategic Architecture</h4>
+        <p>Untuk klien yang membutuhkan fondasi strategi menyeluruh sesuai salah satu track utama. Arsitektur yang dapat diterjemahkan ke seluruh tim dan pelaksana.</p>
+        <div class="output-label">Output</div>
+        <p style="color:var(--text-muted);font-size:0.82rem;">Strategic architecture map, direction, value/mandate logic, target/stakeholder map, sequence, measurement logic, dan roadmap awal.</p>
+      </div>
+      <div class="engagement-card">
+        <div class="tag">Comprehensive</div>
+        <h4>Comprehensive Strategic Engagement</h4>
+        <p>Untuk klien dengan konteks kompleks, multi-stakeholder, lintas program, atau agenda besar yang membutuhkan beberapa area pendalaman sekaligus.</p>
+        <div class="output-label">Output</div>
+        <p style="color:var(--text-muted);font-size:0.82rem;">Core architecture, beberapa area pendalaman, implementation sequence, proof model, stakeholder logic, handoff brief, dan next-wave recommendation.</p>
+      </div>
+      <div class="engagement-card">
+        <div class="tag">Ongoing</div>
+        <h4>Strategic Advisory & Decision Guidance</h4>
+        <p>Untuk klien yang sudah bergerak dan butuh partner berpikir berkala. Minimal 3 bulan. Mencakup decision memo, assumption review, progress reading, dan correction note.</p>
+        <div class="output-label">Output</div>
+        <p style="color:var(--text-muted);font-size:0.82rem;">Advisory session, decision memo, risk check, correction note, dan next-wave direction per periode.</p>
+      </div>
+      <div class="engagement-card">
+        <div class="tag">Handoff</div>
+        <h4>Execution Handoff Kit</h4>
+        <p>Untuk klien yang sudah punya strategi dan butuh menerjemahkannya ke pelaksana. Vendor brief, production brief, campaign brief, KPI guide, dan review criteria yang dapat langsung digunakan.</p>
+        <div class="output-label">Output</div>
+        <p style="color:var(--text-muted);font-size:0.82rem;">Brief untuk tim, vendor, partner, dan pelaksana teknis—siap eksekusi tanpa ambiguitas arah.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA PENDALAMAN -->
+<section id="area">
+  <div class="container">
+    <div class="section-eyebrow reveal">Area Pendalaman Strategis</div>
+    <h2 class="section-title reveal">Kedalaman Ditentukan<br>oleh Konteks Klien</h2>
+    <div class="section-divider reveal"></div>
+    <p class="section-lead reveal">Area pendalaman dipilih setelah SUREQ membaca situasi. Tidak semua area diaktifkan dalam satu engagement—yang diaktifkan adalah yang paling menentukan untuk keputusan klien saat ini.</p>
+
+    <div class="area-grid reveal">
+      <div class="area-card">
+        <h4>Campaign Strategy & Activation</h4>
+        <p>Tujuan, target, value, message, proof, channel role, activation sequence, relationship path, dan KPI kampanye.</p>
+      </div>
+      <div class="area-card">
+        <h4>Brand & Market Positioning</h4>
+        <p>Value proposition, diferensiasi, audience priority, competitive space, dan positioning statement yang dapat dieksekusi.</p>
+      </div>
+      <div class="area-card">
+        <h4>Growth & Commercial Architecture</h4>
+        <p>Growth logic, offer architecture, conversion path, retention, reactivation, dan commercial scaling model.</p>
+      </div>
+      <div class="area-card">
+        <h4>Governance & Operating Rhythm</h4>
+        <p>Role clarity, decision rights, meeting rhythm, approval flow, reporting logic, dan operating system organisasi.</p>
+      </div>
+      <div class="area-card">
+        <h4>Program Architecture & M&E</h4>
+        <p>Beneficiary logic, partner ecosystem, implementation sequence, monitoring & evaluation, dan impact narrative.</p>
+      </div>
+      <div class="area-card">
+        <h4>Survey-to-Strategy & Intelligence</h4>
+        <p>Interpretasi survei menjadi segment priority, issue leverage, message direction, dan movement sequence.</p>
+      </div>
+      <div class="area-card">
+        <h4>Reputation & Public Figure Architecture</h4>
+        <p>Positioning, reputation pathway, proof model, communication rhythm, stakeholder map, dan milestone narrative.</p>
+      </div>
+      <div class="area-card">
+        <h4>Agenda Setting & Issue Control</h4>
+        <p>Agenda architecture, issue flow, stakeholder briefing, narrative response, escalation path, dan monitoring logic.</p>
+      </div>
+      <div class="area-card">
+        <h4>Mandate Realization Strategy</h4>
+        <p>Mandate-to-program map, priority roadmap, feasibility screen, public proof model, dan reporting rhythm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARA KERJA -->
+<section id="cara-kerja">
+  <div class="container">
+    <div class="section-eyebrow reveal">Cara Kerja</div>
+    <h2 class="section-title reveal" style="color:var(--white);">Proses yang Terstruktur,<br>Output yang Dapat Dieksekusi</h2>
+    <div class="section-divider reveal"></div>
+    <p class="section-lead reveal">Setiap engagement dimulai dari pembacaan masalah. Output SUREQ dirancang agar dapat langsung digunakan sebagai dasar keputusan, bukan hanya sebagai dokumen laporan.</p>
+
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="step-circle">01</div>
+        <h4>Orientation</h4>
+        <p>Klien menjelaskan konteks, keputusan yang dipertimbangkan, dan timeline kebutuhan. Tidak perlu dokumen lengkap untuk memulai.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">02</div>
+        <h4>Diagnostic & Scoping</h4>
+        <p>SUREQ membaca akar masalah, memisahkan gejala dari bottleneck utama, dan menentukan track serta scope engagement.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">03</div>
+        <h4>Architecture Design</h4>
+        <p>Penyusunan arsitektur strategi: direction, value, target, stakeholder, sequence, proof model, measurement, dan risk note.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">04</div>
+        <h4>Deepening & Review</h4>
+        <p>Pendalaman area prioritas, interim review, dan penyesuaian berdasarkan data, konteks, atau keputusan baru yang muncul.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">05</div>
+        <h4>Handoff & Next Wave</h4>
+        <p>Output diterjemahkan ke brief untuk pelaksana. Rekomendasi wave berikutnya disusun berdasarkan hasil dan pembelajaran.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF MODEL -->
+<section id="proof">
+  <div class="container">
+    <div class="section-eyebrow reveal">SUREQ Proof Model</div>
+    <h2 class="section-title reveal">Setiap Rekomendasi Harus<br>Dapat Dipertanggungjawabkan</h2>
+    <div class="section-divider reveal"></div>
+
+    <div class="proof-grid">
+      <div class="reveal">
+        <p class="section-lead" style="margin-bottom:32px;">SUREQ tidak menjanjikan hasil absolut yang berada di luar kontrol langsung. Yang dijaga adalah kedisiplinan diagnosis, kualitas arsitektur, kejelasan scope, dan rekomendasi yang dapat diuji.</p>
+        <ul class="proof-list">
+          <li class="proof-item">
+            <div class="proof-check"></div>
+            <div class="proof-item-text">
+              <h5>Diagnosis Sebelum Solusi</h5>
+              <p>Setiap engagement dimulai dengan membaca masalah, bukan langsung mengeksekusi solusi yang sudah ada di benak klien.</p>
+            </div>
+          </li>
+          <li class="proof-item">
+            <div class="proof-check"></div>
+            <div class="proof-item-text">
+              <h5>Konteks, Bukan Template</h5>
+              <p>Tidak ada pendekatan generik yang dipaksakan. Setiap rekomendasi berbasis situasi, stakeholder, risiko, dan kesiapan klien yang spesifik.</p>
+            </div>
+          </li>
+          <li class="proof-item">
+            <div class="proof-check"></div>
+            <div class="proof-item-text">
+              <h5>Arsitektur yang Dapat Dieksekusi</h5>
+              <p>Output dirancang agar dapat langsung digunakan sebagai dasar keputusan, brief pelaksana, atau guidance implementasi.</p>
+            </div>
+          </li>
+          <li class="proof-item">
+            <div class="proof-check"></div>
+            <div class="proof-item-text">
+              <h5>Scope yang Jelas</h5>
+              <p>Peran, output, timeline, dan payment trigger disepakati sebelum kickoff. Mengurangi scope creep dan menjaga ekspektasi.</p>
+            </div>
+          </li>
+          <li class="proof-item">
+            <div class="proof-check"></div>
+            <div class="proof-item-text">
+              <h5>Rekomendasi Independen</h5>
+              <p>Berbasis kepentingan strategi klien, bukan komisi vendor atau pelaksana yang direkomendasikan.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="proof-right reveal">
+        <h3>Referensi Profesional</h3>
+        <p>Pendekatan SUREQ menggabungkan disiplin dari referensi praktik yang telah teruji secara internasional.</p>
+        <p><strong style="color:rgba(255,255,255,0.85);">ISO 20700:2017</strong> — Guidelines for management consultancy services sebagai standar delivery advisory yang efektif.</p>
+        <p><strong style="color:rgba(255,255,255,0.85);">OECD DAC Evaluation Criteria</strong> — Relevance, coherence, effectiveness, efficiency, impact, dan sustainability untuk program dan public agenda.</p>
+        <p><strong style="color:rgba(255,255,255,0.85);">IFC Stakeholder Engagement Handbook</strong> — Stakeholder identification, consultation, partnerships, dan grievance management.</p>
+        <p><strong style="color:rgba(255,255,255,0.85);">Internal SUREQ Diagnostic Approach</strong> — Kerangka diagnosis untuk membaca arah, nilai, stakeholder, trust, struktur, gerak, measurement, dan risiko.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTASI -->
+<section id="investasi">
+  <div class="container">
+    <div class="section-eyebrow reveal">Panduan Investasi</div>
+    <h2 class="section-title reveal">Investasi yang Proporsional<br>terhadap Nilai yang Dilindungi</h2>
+    <div class="section-divider reveal"></div>
+    <p class="section-lead reveal">Tidak ada quotation final di sini. Panduan ini membantu klien membaca proporsi investasi berdasarkan konteks dan kompleksitas keputusan yang perlu diarsiteki.</p>
+
+    <div class="inv-cards reveal">
+      <div class="inv-card">
+        <h4>Diagnostic & Scoping</h4>
+        <p>Untuk klien yang belum yakin akar masalah dan ingin mengetahui starting point yang tepat sebelum berkomitmen lebih jauh.</p>
+        <div class="inv-range">Rp15–45 juta</div>
+        <div class="inv-label">Orientasi + diagnostic session + problem framing</div>
+      </div>
+      <div class="inv-card">
+        <h4>Architecture Sprint</h4>
+        <p>Satu masalah prioritas yang perlu dirapikan dengan cepat. Architecture map, priority sequence, dan action recommendation.</p>
+        <div class="inv-range">Rp45–120 juta</div>
+        <div class="inv-label">Focused sprint 2–3 minggu</div>
+      </div>
+      <div class="inv-card featured">
+        <div class="inv-badge">Paling Sering</div>
+        <h4>Core Strategic Architecture</h4>
+        <p>Fondasi strategi menyeluruh untuk satu track utama. Arsitektur yang dapat langsung digunakan sebagai dasar eksekusi.</p>
+        <div class="inv-range">Rp85–220 juta</div>
+        <div class="inv-label">Umumnya 3–6 minggu</div>
+      </div>
+      <div class="inv-card">
+        <h4>Comprehensive Engagement</h4>
+        <p>Konteks kompleks, multi-stakeholder, atau agenda besar yang membutuhkan beberapa area pendalaman sekaligus.</p>
+        <div class="inv-range">Rp150–500 juta</div>
+        <div class="inv-label">Berdasarkan milestone</div>
+      </div>
+      <div class="inv-card">
+        <h4>Advisory Bulanan</h4>
+        <p>Partner berpikir berkala untuk keputusan penting secara rutin. Decision memo, risk check, dan correction note per periode.</p>
+        <div class="inv-range">Rp25 juta+/bln</div>
+        <div class="inv-label">Minimum 3 bulan</div>
+      </div>
+      <div class="inv-card">
+        <h4>Execution Handoff Kit</h4>
+        <p>Menerjemahkan strategi ke brief pelaksana. Vendor brief, campaign brief, KPI guide, dan review criteria siap pakai.</p>
+        <div class="inv-range">Rp15–75 juta</div>
+        <div class="inv-label">Per kebutuhan handoff</div>
+      </div>
+    </div>
+
+    <div class="inv-note reveal">
+      <p><strong>Cara membaca investasi SUREQ:</strong> Nilai yang dilindungi = budget implementasi + waktu pengambilan keputusan + peluang yang bisa lewat + risiko reputasi + biaya koreksi. Jika kampanye bernilai Rp1 miliar dan pemborosan hanya 10%, nilai yang terbuang sudah Rp100 juta—belum termasuk momentum yang hilang, learning cycle yang terlewat, dan ruang publik yang diambil pihak lain. Fee SUREQ tidak termasuk biaya eksekusi teknis, produksi, media, vendor, atau implementasi yang perlu disiapkan terpisah oleh klien.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOUNDARY -->
+<section id="boundary">
+  <div class="container">
+    <div class="section-eyebrow reveal">Peran & Batas Keterlibatan</div>
+    <h2 class="section-title reveal">SUREQ Memastikan Arah.<br>Eksekusi Tetap Membutuhkan Pelaksana.</h2>
+    <div class="section-divider reveal"></div>
+    <p class="section-lead reveal">SUREQ tidak mengambil alih seluruh fungsi operasional harian klien sebagai default. Kejelasan batas peran adalah bagian dari cara kerja yang bertanggung jawab.</p>
+
+    <div class="boundary-grid reveal">
+      <div class="boundary-col sureq">
+        <h4>Peran SUREQ</h4>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Membaca masalah dan menyusun pilihan strategi, prioritas, trade-off, dan sequence</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Mendesain objective, target, stakeholder, message, proof, rollout, dan measurement</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Menyusun value proposition, positioning, narrative, proof model, dan reputation pathway</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Membaca role, capability gap, decision rights, meeting rhythm, dan readiness organisasi</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Menyiapkan brief, KPI, review checklist, dan strategic guidance untuk pelaksana</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Memberikan arahan strategis, review berkala, correction note, dan next-wave recommendation</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Menyusun indikator, review rhythm, correction trigger, dan membaca hasil secara strategis</span>
+        </div>
+      </div>
+      <div class="boundary-col client">
+        <h4>Peran Klien / Pelaksana</h4>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Mengambil keputusan final dan memberi mandat kepada tim internal atau vendor</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Menyetujui arah, menyediakan data, dan menugaskan tim atau pelaksana teknis</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Menjaga konsistensi tindakan, rekam jejak, dan komunikasi yang dijalankan sehari-hari</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Menetapkan struktur internal, otoritas, penugasan, dan akuntabilitas tim</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Memilih, mengontrak, membayar, mengelola, dan mengevaluasi pelaksana harian</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Menjalankan aktivitas harian, koordinasi teknis, produksi, distribusi, dan follow-up lapangan</span>
+        </div>
+        <div class="boundary-item">
+          <div class="boundary-dot"></div>
+          <span>Menyediakan data aktual, laporan pelaksana, akses dashboard, dan menjalankan koreksi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-eyebrow reveal">Frequently Asked Questions</div>
+    <h2 class="section-title reveal">Pertanyaan yang Sering<br>Diajukan Klien</h2>
+    <div class="section-divider reveal"></div>
+
+    <div class="faq-grid reveal">
+      <div class="faq-col">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Apakah SUREQ cocok jika kami belum tahu masalah utama?</div>
+          <div class="faq-a">Ya. Kondisi seperti ini cocok dimulai dari Strategic Diagnostic & Scoping. SUREQ membantu memisahkan gejala dari bottleneck utama sebelum klien membeli layanan yang terlalu besar atau salah arah.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Apakah SUREQ hanya untuk bisnis?</div>
+          <div class="faq-a">Tidak. SUREQ melayani bisnis, korporasi, brand, lembaga, venture, program, tokoh publik, pejabat, kepala daerah, kandidat, organisasi publik, dan agenda strategis yang membutuhkan arsitektur keputusan.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Apakah semua engagement harus dimulai dari Core Strategic Architecture?</div>
+          <div class="faq-a">Tidak selalu. Klien dapat masuk melalui Strategic Diagnostic & Scoping terlebih dahulu. Namun untuk keputusan besar, core architecture biasanya dibutuhkan agar area pendalaman tidak berjalan sendiri-sendiri.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Apakah SUREQ bisa membantu kampanye tokoh, pejabat, atau agenda publik?</div>
+          <div class="faq-a">Ya. SUREQ membantu positioning, public narrative, agenda architecture, survey-to-strategy, stakeholder map, persuasion logic, issue control, mobilization rhythm, dan public proof model.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Bagaimana jika sudah ada data survei?</div>
+          <div class="faq-a">SUREQ dapat menerjemahkan data survei menjadi strategi: membaca segmen prioritas, isu leverage, trust gap, wilayah/basis potensial, narrative implication, dan sequence kampanye atau agenda.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Apakah fee SUREQ sudah termasuk biaya eksekusi?</div>
+          <div class="faq-a">Tidak. Fee SUREQ mencakup jasa strategic advisory, architecture design, guidance, dan/atau handoff sesuai scope. Biaya eksekusi seperti produksi, vendor, media, event, tim teknis, survey tambahan, atau aktivasi lapangan perlu disiapkan terpisah oleh klien.</div>
+        </div>
+      </div>
+      <div class="faq-col">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Apakah SUREQ menggantikan direktur, konsultan internal, atau vendor?</div>
+          <div class="faq-a">Tidak sebagai default. SUREQ membantu klien menentukan apakah mereka membutuhkan direktur, konsultan, vendor, partner, tim produksi, atau perbaikan sistem. Jika diperlukan, SUREQ dapat menyiapkan role brief, KPI, dan decision rights.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Bagaimana jika owner atau pimpinan cenderung micromanagement?</div>
+          <div class="faq-a">SUREQ membaca penyebabnya: trust gap, role ambiguity, capability gap, KPI yang tidak jelas, approval flow yang buruk, atau belum adanya decision rights. Dari sana governance dan operating rhythm dapat diperbaiki agar owner mengontrol hal penting tanpa harus turun ke semua detail teknis.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Berapa lama engagement biasanya berjalan?</div>
+          <div class="faq-a">Diagnostic dapat berjalan 5–10 hari kerja. Focused sprint 2–3 minggu. Core architecture umumnya 3–6 minggu. Pendalaman strategis 1–4 minggu. Guidance dapat berlangsung bulanan, umumnya minimal 3 bulan.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Apakah hasil kerja SUREQ hanya berupa dokumen?</div>
+          <div class="faq-a">Tidak. Output dapat berupa architecture deck, strategic memo, roadmap, workshop, decision note, briefing kit, guidance session, scorecard, M&E logic, campaign brief, program brief, atau handoff untuk pelaksana.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Apakah SUREQ menjamin hasil bisnis atau elektabilitas?</div>
+          <div class="faq-a">SUREQ tidak menjanjikan hasil absolut yang berada di luar kontrol langsung. Yang dijaga adalah kedisiplinan diagnosis, kualitas arsitektur, kejelasan scope, proof model, dan rekomendasi yang dapat dipertanggungjawabkan.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Apakah data dan informasi klien dijaga kerahasiaannya?</div>
+          <div class="faq-a">Ya. Dokumen, data survei, strategi, isu, dan informasi internal diperlakukan sebagai confidential. NDA dapat digunakan bila dibutuhkan.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-eyebrow reveal">Mulai dari Sini</div>
+      <h2 class="reveal">Keputusan Besar Layak<br><em style="font-style:italic;color:var(--gold-muted);">Mendapat Arsitektur yang Benar</em></h2>
+      <p class="reveal">Klien cukup menjelaskan konteks, keputusan yang sedang dipertimbangkan, dokumen yang tersedia, pihak yang berwenang mengambil keputusan, serta timeline kebutuhan. SUREQ yang akan menentukan langkah selanjutnya.</p>
+      <div class="contact-actions reveal">
+        <a href="mailto:info@sureqstrategi.com" class="btn-contact-primary">Kirim Email</a>
+        <a href="https://wa.me/62811494777" class="btn-contact-ghost">WhatsApp +62 811 494 777</a>
+      </div>
+
+      <div class="next-steps reveal">
+        <h3>Next Step</h3>
+        <ul class="next-step-list">
+          <li class="next-step-item">
+            <span class="next-step-num">1</span>
+            <p>Kirim konteks singkat mengenai situasi, tujuan, keputusan yang sedang dipertimbangkan, dan timeline kebutuhan.</p>
+          </li>
+          <li class="next-step-item">
+            <span class="next-step-num">2</span>
+            <p>SUREQ melakukan initial orientation untuk membaca relevansi awal dan menentukan apakah perlu diagnostic/scoping.</p>
+          </li>
+          <li class="next-step-item">
+            <span class="next-step-num">3</span>
+            <p>Klien mengirim dokumen awal yang tersedia. Dokumen tidak harus lengkap untuk memulai.</p>
+          </li>
+          <li class="next-step-item">
+            <span class="next-step-num">4</span>
+            <p>SUREQ menyusun rekomendasi engagement, scope, output, timeline, dan investment berdasarkan kebutuhan nyata.</p>
+          </li>
+          <li class="next-step-item">
+            <span class="next-step-num">5</span>
+            <p>Engagement dimulai setelah scope, PIC, decision owner, jadwal, dan payment trigger disepakati.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contact-details reveal" style="max-width:860px;margin:0 auto;margin-top:64px;">
+      <div class="contact-detail">
+        <div class="contact-detail-label">Email</div>
+        <div class="contact-detail-value">info@sureqstrategi.com</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-label">WhatsApp</div>
+        <div class="contact-detail-value">+62 811 494 777</div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-label">Alamat</div>
+        <div class="contact-detail-value">The East, Jl. Lingkar Mega Kuningan Barat Raya No. 1, Setiabudi, Jakarta Selatan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <div class="footer-brand">Sureq Strategi Indonesia</div>
+      <p>Strategic Architecture Advisory · Jakarta, Indonesia</p>
+      <p style="margin-top:4px;">www.sureqstrategi.com</p>
+    </div>
+    <div class="footer-right">
+      <p>© 2026 PT. SUREQ Strategi Indonesia</p>
+      <p>Confidential — For Authorized Recipients Only</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => { entry.target.classList.add('visible'); }, i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // Tabs
+  function switchTab(btn, id) {
+    document.querySelectorAll('.situasi-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.situasi-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + id).classList.add('active');
+  }
+</script>
+</body>
+</html>
